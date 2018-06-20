@@ -50,7 +50,8 @@ foreach ($events as $event) {
 // ユーザーをデータベースに登録する
 function registerUser($userId, $text) {
   $dbh = dbConnection::getConnection();
-  $sql = 'insert into textMessage (userid, message) values (pgp_sym_encrypt(?, \'' . getenv('DB_ENCRYPT_PASS') . '\'), ?) ';
+  //$sql = 'insert into textMessage (userid, message) values (pgp_sym_encrypt(?, \'' . getenv('DB_ENCRYPT_PASS') . '\'), ?) ';
+  $sql = 'insert into textMessage (userid, message) values (?, ?) ';
   $sth = $dbh->prepare($sql);
   $sth->execute(array($userId, $text));
 }
