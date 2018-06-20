@@ -40,7 +40,7 @@ foreach ($events as $event) {
   }
 
   // ユーザーをデータベースに登録
-  registerUser($event->getUserId(), $event->getText());
+  //registerUser($event->getUserId(), $event->getText());
 
   // オウム返し
   $bot->replyText($event->getReplyToken(), $event->getText());
