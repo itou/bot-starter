@@ -43,7 +43,7 @@ foreach ($events as $event) {
   registerUser($event->getUserId(), $event->getText());
 
   // オウム返し
-  $bot->replyText($event->getReplyToken(), $event->getText());
+  $bot->replyText($event->getReplyToken(), 'オレ参上');
 
 }
 
